@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <!-- ETIQUETA PICTURE -->
+    <picture>
+        <source media="(min-width: 650px)" srcset="">
+        <source media="(min-width: 465px)" srcset="">
+        <img src="./imagenes/alien.png" alt="El clásico logo del alien.">
+    </picture>
+    <!-- El elemento <picture> no define ningún atributo propio, pero puedes conseguir
+        comportamientos muy avanzados cuando utilizas <picture> para encerrar a varios elementos
+        <source>.
+        El elemento <source>, que se utiliza para cargar elementos multimedia como audios y vídeos,
+        se ha actualizado para que también soporte la carga de imágenes. Para ello, se le han añadido
+        los siguientes atributos:
+        ✓ srcset y sizes: Son los mismos atributos que en la etiqueta <img>. Sirven para seleccionar
+        la ruta y el tamaño de las imágenes, como se explicaba anteriormente. El atributo srcset
+        es obligatorio en este caso y sustituye a src en caso de solo querer incluir una imagen.
+        El atributo sizes es opcional
+        ✓ media: Opcional. Permite indicar cualquier media query que sea válida en el selector
+        @media de CSS (ejemplo media="(max-width: 30em)"). De esta manera, la
+        etiqueta source solo aparecería cuando se cumple la condición del atributo media.
+        ✓ type: Opcional. Acepta como valor cualquier tipo MIME estándar (ejemplo
+        type="image/gif" o type="image/png"). No suele ser necesario y normalmente
+        el navegador detecta el formato de cada imagen. No obstante, en este enlace puedes
+        consultar los tipos de imágenes más comunes. -->
+
+    <!-- ETIQUETA AUDIO. -->
+
+    <audio controls="controls" preload="auto">
+        <source src="./audio/01 - Un Tipo Listo.mp3" type="audio/mp3" />
+        <source src="./audio/01-Un-Tipo-Listo.ogg" type="audio/ogg" />
+        El navegador no soporta el audio
+    </audio>
+
+
 </body>
+
 </html>
