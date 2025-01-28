@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./estilo.css">
 </head>
+
 <body>
+
+    <!-- La etiqueta <picture> en HTML se utiliza para implementar imágenes responsivas y adaptativas, 
+        lo que permite cargar diferentes imágenes en función de las características del dispositivo o del navegador del usuario,
+        como el tamaño de pantalla o el formato soportado.
+        
+        Estructura de <picture>
+        Etiqueta <picture>: Es un contenedor para varios recursos de imagen (<source>) y una imagen de respaldo (<img>).
+        
+        Etiquetas <source>:
+        
+        Cada <source> define un recurso de imagen alternativo con las propiedades:
+        srcset: Especifica la URL de la imagen que se debe cargar.
+        media (opcional): Define una media query que especifica cuándo usar esa imagen (por ejemplo, en función del ancho de la pantalla).
+        type (opcional): Indica el formato MIME de la imagen (como image/webp o image/jpeg), que ayuda al navegador a determinar cuál imagen es compatible.
+        Etiqueta <img>:
+        
+        Es la imagen de respaldo (fallback). Si el navegador no soporta la etiqueta <picture> o no puede cargar ninguna de las imágenes especificadas en <source>, cargará esta imagen. -->
     <picture>
-        <source srcset="paisaje-1600.webp 2x, paisaje-1200.webp 1x" media="(min-width: 1200px)" type="image/webp">
+        <!-- Si el ancho de la pantalla es mayor o igual a 1200px:
+            Se carga la imagen paisaje_1.webp si el navegador soporta el formato WebP.
+            Si el navegador no soporta WebP, se carga la imagen paisaje.jpg. -->
+        <source srcset="./img/paisaje_1.webp" media="(min-width: 1200px)" type="image/webp">
         <source srcset="./img/paisaje.jpg" media="(min-width: 1200px)" type="image/jpeg">
-        <source srcset="paisaje-800.webp" media="(min-width: 800px)" type="image/webp">
-        <source srcset="paisaje-800.jpg" media="(min-width: 800px)" type="image/jpeg">
-        <source srcset="paisaje-resto.webp" type="image/webp">
+
+
+        <!-- Si el ancho de la pantalla es mayor o igual a 800px, pero menor que 1200px:
+            Se intenta cargar primero la versión WebP (paisaje_1.webp).
+            Si no es posible, se usa el JPEG (paisaje.jpg). -->
+        <source srcset="./img/paisaje_1.webp" media="(min-width: 800px)" type="image/webp">
+        <source srcset="./img/paisaje.jpg" media="(min-width: 800px)" type="image/jpeg">
+
+        <!-- Si no se especifica una condición de media, esta imagen se considera como una opción general.
+            Se cargará la imagen paisaje_1.webp si el navegador soporta el formato WebP. -->
+        <source srcset="./img/paisaje_1.webp" type="image/webp">
+
+
+        <!-- Si ninguna de las condiciones anteriores se cumple o el navegador no soporta la etiqueta <picture>, se mostrará esta imagen como respaldo. -->
         <img src="./img/paisaje.jpg" alt="Paisaje">
-      </picture>
+    </picture>
 
 </body>
+
 </html>
