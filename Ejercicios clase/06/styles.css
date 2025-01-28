@@ -1,0 +1,53 @@
+#images {
+	width: 500px;
+	height: 500px;
+	background-position: top left;	
+	background-repeat: no-repeat;
+    /*
+    Imagen inicial que se muestra en el contenedor.
+    */
+	background-image: url("./../../imagenes/HTML5.png"); 
+    /* Animación:
+
+    animation-duration: 8s: La animación completa dura 8 segundos.
+    animation-iteration-count: infinite: La animación se repite infinitamente.
+    animation-name: Galeria: Asocia este estilo al conjunto de animaciones definidas en la regla @keyframes llamada Galeria. */
+
+	animation-duration: 8s;
+	animation-iteration-count: infinite;	
+	animation-name: Galeria;
+}
+
+
+/* from (o 0%):
+
+Indica el punto inicial de la animación. En este caso, la imagen inicial es HTML5.png.
+25%:
+
+En este punto de la animación (25% del ciclo de 8 segundos), la imagen cambia a Javascript.png.
+50%:
+
+A mitad del ciclo (50% del tiempo), la imagen cambia a CSS3.png.
+75%:
+
+Cuando se ha recorrido el 75% del ciclo, la imagen cambia a PHP.png.
+to (o 100%):
+
+En el final del ciclo de animación (100%), la imagen vuelve a ser HTML5.png, cerrando el bucle. */
+
+
+@keyframes Galeria {
+	from {background-image: url("./../../imagenes/HTML5.png")}
+
+	25% {background-image: url("./../../imagenes/Javascript.png")}
+	
+	50% {background-image: url("./../../imagenes/CSS3.png")}
+	
+	75% {background-image: url("./../../imagenes/PHP.png")}
+	
+	to {background-image: url("./../../imagenes/HTML5.png")}
+
+}
+
+
+
