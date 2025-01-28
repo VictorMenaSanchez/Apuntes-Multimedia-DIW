@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audios Víctor</title>
+</head>
+<body>
+ 
+  
+    <audio id="audio" autoplay loop preload="auto">
+        <source src="./audio/sweet-dreams-but-i-put-kahoot-music-over-it-_Ngpf6UtPn4k_.ogg" type="audio/ogg">
+        <source src="./audio/sweet dreams but i put kahoot music over it [Ngpf6UtPn4k].mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+    </audio>
+<div class="buttons">
+    <button id="reproducir">PLAY</button>
+    <button id="pausar">PAUSE</button>
+    <button id="reiniciar">REPLAY</button>
+    <button id="mas">+</button>
+    <button id="menos">-</button>
+
+</div>
+
+    <script>
+
+        const audio = document.getElementById('audio');
+
+        const reproducir = document.getElementById('reproducir');
+        const pausar = document.getElementById('pausar');
+        const reiniciar = document.getElementById('reiniciar');
+        const mas = document.getElementById('mas');
+        const menos = document.getElementById('menos');
+
+
+        reproducir.addEventListener('click', () => {
+        audio.play();
+        });
+
+        pausar.addEventListener('click', () =>{
+        audio.pause();
+        });
+
+        reiniciar.addEventListener('click', () =>{
+        audio.pause();
+        audio.currentTime = 0;
+        });
+
+        mas.addEventListener('click', () =>{
+        if (audio.volume < 1) {
+            audio.volume = audio.volume + 0.1;
+        }
+        });
+        
+        menos.addEventListener('click', () =>{
+        if (audio.volume > 0) {
+            audio.volume = audio.volume - 0.1;
+        }
+        });
+    </script>
+
+</body>
+
+
+
+
+</html>
