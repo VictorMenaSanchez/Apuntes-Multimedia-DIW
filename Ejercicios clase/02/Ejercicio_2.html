@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 2</title>
+</head>
+<body>
+
+    <!-- La etiqueta <audio> se utiliza para incrustar archivos de audio en una página web.
+    Es una etiqueta compatible con la mayoría de los navegadores modernos y permite al usuario interactuar con un reproductor de audio mediante controles predeterminados. -->
+
+    <!-- Atributos principales de <audio>:
+        controls: Muestra controles para reproducir, pausar, cambiar el volumen, etc.
+        preload:
+        auto: El navegador carga el archivo de audio completo tan pronto como sea posible.
+        metadata: Solo se carga información como duración o tamaño, no el archivo completo.
+        none: El navegador no carga nada hasta que el usuario lo solicita.
+        loop: Hace que el audio se repita automáticamente al finalizar.
+        autoplay: Inicia la reproducción del audio automáticamente al cargar la página (puede ser bloqueado por algunos navegadores si no hay interacción del usuario).
+        src: Define la ruta directa al archivo de audio.
+        <source>: Especifica diferentes fuentes de audio para mejorar la compatibilidad. -->
+    <audio controls="controls" preload="auto" loop autoplay> 
+        <source src="./../../audio/01 - Un Tipo Listo.mp3" type="audio/mp3" ></source>
+        <source src="./../../audio/01-Un-Tipo-Listo.ogg" type="audio/ogg" ></source>
+        <source src="./../../audio/01-Un-Tipo-Listo.flash" type="audio/x-flash" ></source>
+        El navegador no soporta el audio  
+        </audio> 
+
+</body>
+</html>
