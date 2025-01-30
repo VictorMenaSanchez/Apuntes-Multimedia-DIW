@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Título que gira.</h1>
+    <style>
+        h1{
+            color: blue;
+            position: absolute;
+            animation: giro 4s 2s forwards, mover 4s 2s forwards;
+        }
+
+        @keyframes giro {
+            0%{transform: rotate(0deg);}
+            25%{transform: rotate(90deg);}
+            50%{transform: rotate(180deg);}
+            100%{transform: rotate(270deg);}
+        }
+
+        @keyframes mover {
+            0% { right: 20%; }
+            100% { right: 80%; } /* Se mueve a la izquierda */
+        }
+    </style>
+</body>
+</html>
